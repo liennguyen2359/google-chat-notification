@@ -23,9 +23,10 @@ const textButton = (text: string, url: string) => ({
 
 export async function notify(name: string, url: string, status: Status) {
   const { owner, repo } = github.context.repo;
-  const { eventName, sha, ref } = github.context;
+  const { eventName, sha, ref, runId } = github.context;
   const { number } = github.context.issue;
   const repoUrl = `https://github.com/${owner}/${repo}`;
+  const pageUrl = `https://${owner}.github.io/${repo}/${runId}`;
   const eventPath = eventName === 'pull_request' ? `/pull/${number}` : `/commit/${sha}`;
   const eventUrl = `${repoUrl}${eventPath}`;
   const checksUrl = `${repoUrl}${eventPath}/checks`;
@@ -59,12 +60,15 @@ export async function notify(name: string, url: string, status: Status) {
             },
             {
               keyValue: { topLabel: "ref", content: ref }
+            },
+            {
+              keyValue: { topLabel: "Total tests", content: "12" }
             }
           ]
         },
         {
           widgets: [{
-            buttons: [textButton("OPEN CHECKS", checksUrl)]
+            buttons: [textButton("OPEN RESULTS", pageUrl)]
           }]
         }
       ]
