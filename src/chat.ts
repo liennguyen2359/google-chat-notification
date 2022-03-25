@@ -65,7 +65,7 @@ export async function notify(name: string, url: string, status: Status) {
         },
         {
           widgets: [{
-            buttons: [textButton("OPEN RESULTS", pageUrl)]
+            buttons: [textButton("OPEN TEST RESULTS", pageUrl)]
           }]
         }
       ]

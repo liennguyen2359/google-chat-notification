@@ -3033,7 +3033,7 @@ function notify(name, url, status) {
                         },
                         {
                             widgets: [{
-                                    buttons: [textButton("OPEN RESULTS", pageUrl)]
+                                    buttons: [textButton("OPEN TEST RESULTS", pageUrl)]
                                 }]
                         }
                     ]
