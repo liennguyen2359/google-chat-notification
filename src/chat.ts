@@ -61,9 +61,6 @@ export async function notify(name: string, url: string, status: Status) {
             {
               keyValue: { topLabel: "ref", content: ref }
             },
-            // {
-            //   keyValue: { topLabel: "Total tests", content: "155" }
-            // }
           ]
         },
         {

@@ -3029,9 +3029,6 @@ function notify(name, url, status) {
                                 {
                                     keyValue: { topLabel: "ref", content: ref }
                                 },
-                                {
-                                    keyValue: { topLabel: "Total tests", content: "12" }
-                                }
                             ]
                         },
                         {
